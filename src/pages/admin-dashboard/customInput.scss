@@ -1,0 +1,43 @@
+.customInput {
+    margin-top: 15px;
+    position: relative;
+    width: fit-content;
+
+    input {
+        position: relative;
+        font-size: 1.1rem;
+        padding: 5px 10px;
+        border: none;
+        border: 2px solid #30303010;
+        border-radius: 5px;
+        border-bottom: 3px solid #3335;
+        outline: none;
+        background-color: inherit;
+
+        &:focus{
+            border-bottom: 3px solid #23B5D3;
+        }
+
+        &:focus ~ label,
+        &:valid ~ label {
+            top: 0px;
+            color: #23B5D3;
+            font-size: .8rem;
+            padding: 0 3px;
+        }
+    }
+
+    label {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%);
+        font-size: 1.1rem;
+        color: #333a;
+        background-color: #f5f5ff;
+        pointer-events: none;
+        transition: all .5s ease;
+    }
+
+
+}

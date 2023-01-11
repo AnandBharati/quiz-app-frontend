@@ -1,0 +1,29 @@
+.home{
+    flex: 12;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: rgb(115,255,164);
+    background: linear-gradient(128deg, rgba(115,255,164,1) 0%, rgba(99,161,233,1) 100%);
+    // height: calc(100vh - 100px);
+
+    .left{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+
+        h1{
+            font-size: 6rem;
+            line-height: 7rem;
+            color: #001514ff;
+        }
+
+        p{
+            margin-top: 20px;
+        }
+    }
+
+}

@@ -1,0 +1,35 @@
+.sidebar{
+    flex: 4;
+    display: flex;
+    // justify-content: center;
+    // align-items: center;
+    min-height: calc(100vh - 50px - 50px) ;
+    background-color: #EEEEEE;
+
+
+    .questionNumbers{
+        margin-top: 50px;
+        margin-left: 20px;
+        ul{
+            list-style: none;
+            display: grid;
+            place-items: center;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            row-gap: 5px;
+            column-gap: 5px;
+
+            li{
+               width: 30px;
+               height: 30px;
+                background-color: #001514ff ;
+                color: #fbfffeff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &:hover{
+                    background-color: #e01a4fff;
+                }
+            }
+        }
+    }
+}

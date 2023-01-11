@@ -1,0 +1,38 @@
+.navbar {
+    ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
+
+        li {
+            padding: 5px 10px;
+
+            a {
+                text-decoration: none;
+                color: #FBFFFE;
+            }
+
+            &:hover a {
+                color: #E01A4F;
+                // font-weight: 600;
+            }
+        }
+
+
+    }
+}
+
+.active {
+    border-bottom: 2px solid var(--blue-munsell);
+}
+
+@media only screen and (max-width: 700px) {
+    .navbar{
+        flex-direction: column;
+
+        ul{
+            flex-direction: column;
+        }
+    }
+}

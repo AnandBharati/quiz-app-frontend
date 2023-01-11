@@ -1,0 +1,11 @@
+.logout {
+    font-size: 4rem;
+    width: 100vw;
+    min-height: calc(100vh - 50px - 50px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(115, 255, 164);
+    background: linear-gradient(128deg, rgba(115, 255, 164, 1) 0%, rgba(99, 161, 233, 1) 100%);
+    flex-grow: 1;
+}
