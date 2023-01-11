@@ -1,4 +1,68 @@
 .topbar {
+    width: 100vw;
+    height: 60px;
+    background-color: #0f172a;
+    color: #FBFFFE;
+    z-index: 100;
+    box-shadow: 0 0 20px #333;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-left: 10px;
+
+        a {
+            text-decoration: none;
+            color: #FBFFFE;
+        }
+    }
+
+    .bar {
+        display: none;
+    }
+
+    #chkbox {
+        display: none;
+    }
+
+    .sm-navbar {
+        display: none;
+    }
+
+    .login-detail {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-right: 30px;
+
+        i {
+            margin-right: 5px;
+            font-size: 1.8rem;
+        }
+
+        .profilePic {
+            // width: rem;
+            height: 2.8rem;
+            object-fit: cover;
+            position: relative;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+            aspect-ratio: 1/1;
+            border: 2px solid #ddd7;
+        }
+
+        .username {
+            padding-right: 5px;
+            padding-left: 5px;
+        }
+    }
+
+
     @media only screen and (max-width: 640px) {
         // background-color: red;
         position: relative;
@@ -36,77 +100,15 @@
             display: none;
         }
 
-        .sm-navbar{
+        .sm-navbar {
             display: none;
         }
-
 
         //display menus on bar click
         #chkbox:checked~.sm-navbar {
             display: block;
         }
-
-
-
-
     }
 
-    width: 100vw;
-    height: 60px;
-    background-color: #0f172a;
-    color: #FBFFFE;
-    z-index: 100;
-    box-shadow: 0 0 20px #333;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    .logo {
-        font-size: 2rem;
-        font-weight: 700;
-        margin-left: 10px;
-
-        a {
-            text-decoration: none;
-            color: #FBFFFE;
-        }
-    }
-
-    #chkbox{
-        display: none;
-    }
-
-    .sm-navbar{
-        display: none;
-    }
-
-    .login-detail {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-right: 30px;
-
-        i {
-            margin-right: 5px;
-            font-size: 1.8rem;
-        }
-
-        .profilePic {
-            // width: rem;
-            height: 2.8rem;
-            object-fit: cover;
-            position: relative;
-            top: 0;
-            left: 0;
-            border-radius: 50%;
-            aspect-ratio: 1/1;
-            border: 2px solid #ddd7;
-        }
-
-        .username {
-            padding-right: 5px;
-            padding-left: 5px;
-        }
-    }
+    //media query end
 }
