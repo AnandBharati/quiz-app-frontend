@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export const fetchQuestions = createAsyncThunk('qBankSlice/fetchQuestions', async ()=>{
-    const response = await fetch('http://localhost:5000/questions/all')
+    const response = await fetch('https://enthusiastic-tan-jay.cyclic.app/questions/all')
     return response.json()
 })
 

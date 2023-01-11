@@ -23,7 +23,7 @@ function Register() {
 
   function clickHandler() {
     if (isPasswordMatch) {
-      dispatch(RegisterUserAPI({ url: 'http://localhost:5000/auth/new', username: username, email: email, password: password }))
+      dispatch(RegisterUserAPI({ url: 'https://enthusiastic-tan-jay.cyclic.app/auth/new', username: username, email: email, password: password }))
         .unwrap()
         .then((result) => {
           navigate('/login')

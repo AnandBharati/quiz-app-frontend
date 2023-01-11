@@ -3,7 +3,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 export const addQuestionThunk = createAsyncThunk('Question/addQuestionThunk', (args) => {
     if (args.category !== "" && args.question !== '' && args.option1 !== '' && args.option2 !== '' && args.option3 !== "" && args.option4 !== '') {
 
-        return fetch('http://localhost:5000/questions/new', {
+        return fetch('https://enthusiastic-tan-jay.cyclic.app/questions/new', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json',
@@ -19,19 +19,19 @@ export const addQuestionThunk = createAsyncThunk('Question/addQuestionThunk', (a
 })
 
 export const getCategoriesThunk = createAsyncThunk('Question/addQuestionThunk', (args) => {
-    return fetch('http://localhost:5000/questions/allcategories')
+    return fetch('https://enthusiastic-tan-jay.cyclic.app/questions/allcategories')
         .then((res) => res.json())
         .catch((err) => console.log(err))
 })
 
 export const getAllQuestionByCategThunk = createAsyncThunk('Question/addQuestionThunk', (args) => {
-    return fetch('http://localhost:5000/questions/bycategory/' + args)
+    return fetch('https://enthusiastic-tan-jay.cyclic.app/questions/bycategory/' + args)
         .then((res) => res.json())
         .catch((err) => console.log(err))
 })
 
 export const deleteQuestionThunk = createAsyncThunk('Question/addQuestionThunk', (args) => {
-    return fetch('http://localhost:5000/questions/delete' + args,{
+    return fetch('https://enthusiastic-tan-jay.cyclic.app/questions/delete' + args,{
         method: 'DELETE',
         headers: {
             'Content-type': 'applicaion/json'

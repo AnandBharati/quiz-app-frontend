@@ -14,7 +14,7 @@ function Login() {
 
 
   async function clickHandler() {
-    dispatch(loginThunk({ url: "http://localhost:5000/auth/validate", 'username': username, password: password }))
+    dispatch(loginThunk({ url: "https://enthusiastic-tan-jay.cyclic.app/auth/validate", 'username': username, password: password }))
     .unwrap()
     .then((result)=> dispatch(doLogin(result)))
   }
