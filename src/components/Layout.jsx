@@ -7,6 +7,7 @@ import Footer from './Footer'
 function Layout() {
   return (
     <div className="mainContainer">
+      
       <Topbar />
       <div className="middle">
         <Outlet/>

@@ -14,24 +14,24 @@ export const addQuestionThunk = createAsyncThunk('Question/addQuestionThunk', (a
 
     }
     else {
-        return {err: "mandatory field not entered"}
+        return { err: "mandatory field not entered" }
     }
 })
 
-export const getCategoriesThunk = createAsyncThunk('Question/addQuestionThunk', (args) => {
+export const getCategoriesThunk = createAsyncThunk('Question/getCategoriesThunk', (args) => {
     return fetch('https://enthusiastic-tan-jay.cyclic.app/questions/allcategories')
         .then((res) => res.json())
         .catch((err) => console.log(err))
 })
 
-export const getAllQuestionByCategThunk = createAsyncThunk('Question/addQuestionThunk', (args) => {
+export const getAllQuestionByCategThunk = createAsyncThunk('Question/getAllQuestionByCategThunk', (args) => {
     return fetch('https://enthusiastic-tan-jay.cyclic.app/questions/bycategory/' + args)
         .then((res) => res.json())
         .catch((err) => console.log(err))
 })
 
-export const deleteQuestionThunk = createAsyncThunk('Question/addQuestionThunk', (args) => {
-    return fetch('https://enthusiastic-tan-jay.cyclic.app/questions/delete' + args,{
+export const deleteQuestionThunk = createAsyncThunk('Question/deleteQuestionThunk', (args) => {
+    return fetch('https://enthusiastic-tan-jay.cyclic.app/questions/delete' + args, {
         method: 'DELETE',
         headers: {
             'Content-type': 'applicaion/json'
@@ -58,6 +58,7 @@ const questionInitialState = {
     correct_option4: false,
     correct_option5: false,
     correct_option6: false,
+    isLoading: false,
 }
 
 export const QuestionSlice = createSlice({
@@ -87,6 +88,44 @@ export const QuestionSlice = createSlice({
                 state.correct_option6 = action.payload.correct_option6
         }
     },
+    extraReducers: (builder)=>{
+        builder.addCase(addQuestionThunk.pending, (state, action) => {
+            state.isLoading = true;
+        });
+        builder.addCase(addQuestionThunk.fulfilled, (state, action) => {
+            state.isLoading = false;
+        });
+        builder.addCase(addQuestionThunk.rejected, (state, action) => {
+            state.isLoading = false;
+        });
+        builder.addCase(getCategoriesThunk.pending, (state, action) => {
+            state.isLoading = true;
+        });
+        builder.addCase(getCategoriesThunk.fulfilled, (state, action) => {
+            state.isLoading = false;
+        });
+        builder.addCase(getCategoriesThunk.rejected, (state, action) => {
+            state.isLoading = false;
+        });
+        builder.addCase(getAllQuestionByCategThunk.pending, (state, action) => {
+            state.isLoading = true;
+        });
+        builder.addCase(getAllQuestionByCategThunk.fulfilled, (state, action) => {
+            state.isLoading = false;
+        });
+        builder.addCase(getAllQuestionByCategThunk.rejected, (state, action) => {
+            state.isLoading = false;
+        });
+        builder.addCase(deleteQuestionThunk.pending, (state, action) => {
+            state.isLoading = true;
+        });
+        builder.addCase(deleteQuestionThunk.fulfilled, (state, action) => {
+            state.isLoading = false;
+        });
+        builder.addCase(deleteQuestionThunk.rejected, (state, action) => {
+            state.isLoading = false;
+        });
+    }
 })
 
 

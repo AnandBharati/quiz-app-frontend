@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { doLogin, logout } from '../util/authSlice'
 import Navbar from './Navbar'
 import './topbar.scss'
@@ -27,16 +27,26 @@ function Topbar() {
     dispatch(doLogin({ username: username, isloggedIn }))
   }, [])
 
-  // function clickHandler() {
-  //   //logout handling
-  //   dispatch(logout());
-  //   navigate('/login')
-  // }
+
+  useEffect(() => {
+    const menuItem = Array.from(document.querySelectorAll('.sm-navbar .navbar li'));
+    menuItem.map(menu => {
+      menu.onclick = () => {
+        document.getElementById("chkbox").checked = false;
+      }
+    })
+  }, [])
 
   return (
     <div className='topbar'>
-      <div className="logo">Quiziee</div>
-      <Navbar />
+
+      <input type="checkbox" name="chkbox" id="chkbox" />
+      <label className="bar" htmlFor='chkbox'><i className="fa-solid fa-bars"></i></label>
+
+      <div className="logo"><Link to='/'> Quiziee </Link></div>
+
+      <div className="lg-navbar"><Navbar /></div>
+
       <div className="login-detail">
         {
           (userInfo.isloggedIn && userInfo.username !== '') ?
@@ -49,7 +59,10 @@ function Topbar() {
               <div className="username">Guest</div>
             </>
         }
-   </div>
+      </div>
+
+      <div className="sm-navbar"><Navbar /></div>
+
     </div>
   )
 }

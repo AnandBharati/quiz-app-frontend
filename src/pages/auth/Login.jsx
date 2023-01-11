@@ -14,11 +14,10 @@ function Login() {
 
 
   async function clickHandler() {
-    dispatch(loginThunk({ url: "https://enthusiastic-tan-jay.cyclic.app/auth/validate", 'username': username, password: password }))
+    dispatch(loginThunk({ url: "https://enthusiastic-tan-jay.cyclic.app/auth/validate", 'username': username, "password": password }))
     .unwrap()
     .then((result)=> dispatch(doLogin(result)))
   }
-
 
   return (
     <div className="login">

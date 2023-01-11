@@ -1,11 +1,63 @@
 .topbar {
+    @media only screen and (max-width: 640px) {
+        // background-color: red;
+        position: relative;
+        top: 0;
+        left: 0;
+        min-height: 60px;
+        height: fit-content;
+        width: 100vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+
+        .sm-navbar {
+            flex-basis: 100vw;
+            background-color: #0f172a;
+            position: absolute;
+            top: 60px;
+            left: 0px;
+            height: fit-content;
+            width: 100vw;
+            padding: 10px 10px;
+        }
+
+        .bar {
+            display: block;
+
+            i {
+                font-size: 1.5rem;
+                padding-left: 20px;
+            }
+        }
+
+        .lg-navbar {
+            display: none;
+        }
+
+        .sm-navbar{
+            display: none;
+        }
+
+
+        //display menus on bar click
+        #chkbox:checked~.sm-navbar {
+            display: block;
+        }
+
+
+
+
+    }
+
     width: 100vw;
     height: 60px;
     background-color: #0f172a;
     color: #FBFFFE;
     z-index: 100;
     box-shadow: 0 0 20px #333;
-    
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -14,6 +66,19 @@
         font-size: 2rem;
         font-weight: 700;
         margin-left: 10px;
+
+        a {
+            text-decoration: none;
+            color: #FBFFFE;
+        }
+    }
+
+    #chkbox{
+        display: none;
+    }
+
+    .sm-navbar{
+        display: none;
     }
 
     .login-detail {
@@ -27,7 +92,7 @@
             font-size: 1.8rem;
         }
 
-        .profilePic{
+        .profilePic {
             // width: rem;
             height: 2.8rem;
             object-fit: cover;
@@ -43,20 +108,5 @@
             padding-right: 5px;
             padding-left: 5px;
         }
-    }
-}
-
-@media only screen and (max-width: 700px) {
-    .topbar{
-        background-color: red;
-        position: relative;
-        top: 0;
-        left: 0;
-        height: fit-content;
-        width: 100vw;
-
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
     }
 }

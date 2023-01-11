@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { logout } from '../util/authSlice';
@@ -13,6 +14,7 @@ function Navbar() {
     dispatch(logout());
     navigate('/login');
   }
+
 
   return (
     <div className='navbar'>

@@ -19,7 +19,7 @@ const QbankState = [
 
 export const qBankSlice = createSlice({
     name: 'qBankSlice',
-    initialState: {DATA : QbankState, isDataLoaded: false},
+    initialState: {DATA : QbankState, isDataLoaded: false, isLoading:  false},
     reducers: {
         getQBankFromDb: (state,action) => {
                     const newArr = []
@@ -53,12 +53,15 @@ export const qBankSlice = createSlice({
     extraReducers: (builder) =>{
         builder.addCase(fetchQuestions.pending , (state, action)=>{
             state.isDataLoaded = false;
+            state.isLoading = true;
         });
         builder.addCase(fetchQuestions.fulfilled, (state, action)=>{
-            state.isDataLoaded = true;           
+            state.isDataLoaded = true;  
+            state.isLoading = false;         
         });
         builder.addCase(fetchQuestions.rejected, (state, action)=>{
-            state.isDataLoaded = false;           
+            state.isDataLoaded = false;   
+            state.isLoading = false;         
         });
     }
 })

@@ -32,6 +32,7 @@ const loginInitialState = {
     username: '',
     status: '', //
     isloggedIn: false,
+    isLoading: false,
 }
 
 export const mySlice = createSlice({
@@ -58,26 +59,27 @@ export const mySlice = createSlice({
         }
     },
     extraReducers: (builder) => {
-        builder.addCase('loginThunk.pending', (state, action) => {
-            console.log('pending status')
+        builder.addCase(loginThunk.pending, (state, action) => {
+            state.isLoading = true;
         });
-        builder.addCase('loginThunk.fulfilled', (state, action) => {
+        builder.addCase(loginThunk.fulfilled, (state, action) => {
+            state.isLoading = false;
             state = action.payload;
-            console.log('fullfilled')
+            console.log('login fulfiled')
         });
-        builder.addCase('loginThunk.rejected', (state, action) => {
-            console.log('rejected')
+        builder.addCase(loginThunk.rejected, (state, action) => {
+            state.isLoading = false;
         });
 
-        builder.addCase('RegisterUserAPI.pending', (state, action) => {
-            console.log('pending state for register user api')
+        builder.addCase(RegisterUserAPI.pending, (state, action) => {
+            isLoading = true;
         })
 
-        builder.addCase('RegisterUserAPI.fulfilled', (state, action) => {
-            console.log('fulfilled state for register user api')
+        builder.addCase(RegisterUserAPI.fulfilled, (state, action) => {
+            isLoading = false;
         })
-        builder.addCase('RegisterUserAPI.rejected', (state, action) => {
-            console.log('rejected state for register user api')
+        builder.addCase(RegisterUserAPI.rejected, (state, action) => {
+            isLoading = false;
         })
     },
     // [loginThunk.fulfilled]: (state, action) => {
