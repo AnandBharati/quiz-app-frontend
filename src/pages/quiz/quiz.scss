@@ -30,6 +30,13 @@
 
 .quiz-score {
     // height: calc(100vh - 110px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100vw;
+    padding: 0 10px;
+    font-size: 4.5vw;
 
     .failed {
         color: #e01a4fff;

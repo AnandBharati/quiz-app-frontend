@@ -21,14 +21,16 @@
     // outline: 1px solid red;
 }
 
-html,body, #root{
+html,
+body,
+#root {
     min-height: 100vh;
     width: 100vw;
     overflow-x: hidden;
 }
 
 
-.loader{
+.loader {
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -43,24 +45,24 @@ html,body, #root{
     flex-direction: column;
     row-gap: 20px;
 
-    .spinner{
+    .spinner {
         width: 50px;
         height: 50px;
         background-color: transparent;
-        padding-top: 5px;        
+        padding-top: 5px;
         border-radius: 50%;
-        border: 10px solid #e01a4f11; 
-        border-top: 10px solid #e01a4fff;  
+        border: 10px solid #e01a4f11;
+        border-top: 10px solid #e01a4fff;
         animation: rotateAnimation 1s infinite ease-in-out;
     }
 
     @keyframes rotateAnimation {
-        to{
+        to {
             rotate: 1turn;
         }
     }
 
-    .caption{
+    .caption {
         font-size: 1.5rem;
         color: #333;
     }
