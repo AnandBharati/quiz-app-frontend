@@ -31,15 +31,11 @@ function App() {
   const usrnm = data.username;
 
 
-  const loader = <div className="loader">
-    <span className="spinner"></span>
-    <span className="caption">Loading...</span>
-  </div>
 
   return (
 
     <div className="App">
-      {(data.isLoading || qBankData.isLoading || qData.isLoading) && loader}
+      
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />} >

@@ -9,9 +9,11 @@ export const loginThunk = createAsyncThunk('login/loginThunk', (args) => {
         },
         body: JSON.stringify({ username: args.username, password: args.password })
     })
-        .then((res) => res.json())
-        .catch((err) => console.log(err))
-    // .then((result) => result)
+        .then((res) => {
+            if(res.status===404) throw new Error('bad request')
+            else return res.json()
+        })
+        .catch((err) => console.log('err' +err))
 })
 
 export const RegisterUserAPI = createAsyncThunk('login/RegisterUserAPI', (args) => {
