@@ -67,7 +67,6 @@ export const mySlice = createSlice({
         builder.addCase(loginThunk.fulfilled, (state, action) => {
             state.isLoading = false;
             state = action.payload;
-            console.log('login fulfiled')
         });
         builder.addCase(loginThunk.rejected, (state, action) => {
             state.isLoading = false;

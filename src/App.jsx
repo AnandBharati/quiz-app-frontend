@@ -14,19 +14,12 @@ import AddQuestionSet from "./pages/admin-dashboard/AddQuestionSet";
 import ManageQuestions from "./pages/admin-dashboard/ManageQuestions";
 import QuizWelcome from "./pages/quiz/QuizWelcome";
 import QuizScore from "./pages/quiz/QuizScore";
-import { useState } from "react";
 
 function App() {
 
   const data = useSelector((state) => state.authReducer)
-  const qBankData = useSelector((state) => state.qBankReducer)
-  const qData = useSelector((state) => state.questionReducer)
-  // const [isLoading] = useState(data.isLoading || qBankData.isLoading || qData.isLoading);
-  console.log(data.isLoading, qBankData.isLoading, qData.isLoading)
-  // console.log('isloading', isLoading)
-
   const isDataLoaded = useSelector((state) => state.qBankReducer.isDataLoaded)
-  // console.log('data in app', data)
+
   const userloggedin = data.isloggedIn;
   const usrnm = data.username;
 
