@@ -43,7 +43,7 @@ function Topbar() {
       <input type="checkbox" name="chkbox" id="chkbox" />
       <label className="bar" htmlFor='chkbox'><i className="fa-solid fa-bars"></i></label>
 
-      <div className="logo"><Link to='/'> Quiziee </Link></div>
+      <div className="logo"><Link to='/'> Kwizee </Link></div>
 
       <div className="lg-navbar"><Navbar /></div>
 
