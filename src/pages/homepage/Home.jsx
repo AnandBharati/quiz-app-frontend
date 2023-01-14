@@ -10,7 +10,7 @@ function Home() {
     <div className='home'>
       <div className="left">
         <h1>Welcome</h1>
-        <h1>to Quiziee..</h1>
+        <h1>to Kwizee..</h1>
 
         {(data.username !== '' && data.username != null && data.username !== undefined && data.isloggedIn) ?
           <p> Click to <Link to='/quiz'>Start</Link> the quiz </p> :
